@@ -4,6 +4,10 @@ import "github.com/ant0ine/go-json-rest/rest"
 
 var handler Handler
 
+func MakeHandler() {
+	handler = Handler{provider: &Mongo{}}
+}
+
 type Handler struct {
 	provider Provider
 }
