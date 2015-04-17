@@ -2,7 +2,7 @@ package reach
 
 import "github.com/ant0ine/go-json-rest/rest"
 
-var h Handler
+var handler Handler
 
 type Handler struct {
 	provider Provider

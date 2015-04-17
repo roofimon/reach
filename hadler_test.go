@@ -18,7 +18,7 @@ func makeHandler() http.Handler {
 }
 
 func TestAll(t *testing.T) {
-	h = Handler{provider: &Memory{}}
+	handler = Handler{provider: &Memory{}}
 	expected := []Info{
 		Info{Name: "roof", Email: "roofimon@gmail.com"},
 		Info{Name: "foor", Email: "foorimon@gmail.com"},
