@@ -6,19 +6,6 @@ import (
 	"gopkg.in/mgo.v2"
 )
 
-type Provider interface {
-	findAll() ([]Info, error)
-}
-
-type Memory struct{}
-
-func (m *Memory) findAll() ([]Info, error) {
-	return []Info{
-		Info{Name: "roof", Email: "roofimon@gmail.com"},
-		Info{Name: "foor", Email: "foorimon@gmail.com"},
-	}, nil
-}
-
 type Mongo struct{}
 
 func (m *Mongo) findAll() ([]Info, error) {
