@@ -2,17 +2,14 @@ package reach
 
 import "github.com/ant0ine/go-json-rest/rest"
 
-type Info struct {
-	Name  string
-	Email string
+var h Handler
+
+type Handler struct {
+	provider Provider
 }
 
-var p Provider
-
-var All = &rest.Route{HttpMethod: "GET", PathExp: "/contact", Func: all}
-
-func all(w rest.ResponseWriter, r *rest.Request) {
-	results, err := p.findAll()
+func (h *Handler) all(w rest.ResponseWriter, r *rest.Request) {
+	results, err := h.provider.findAll()
 	if err != nil {
 		w.WriteJson(err)
 	}
