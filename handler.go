@@ -16,6 +16,7 @@ func (h *Handler) all(w rest.ResponseWriter, r *rest.Request) {
 	results, err := h.provider.findAll()
 	if err != nil {
 		w.WriteJson(err)
+		return
 	}
 	w.WriteJson(results)
 }
